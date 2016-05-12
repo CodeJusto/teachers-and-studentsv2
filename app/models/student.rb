@@ -3,7 +3,9 @@ class Student < ActiveRecord::Base
   validates :age, numericality: {greater_than_or_equal_to: 3}
   validates :email, uniqueness: true, format: { with: /.*@.*\..*/}
   # validates :teacher_id, presence: true
-  belongs_to :teacher
+  has_many :outlines
+  has_many :teachers, through: :outlines
+
 
   before_save :teacher_working
   after_save :save_teacher, if: :teacher

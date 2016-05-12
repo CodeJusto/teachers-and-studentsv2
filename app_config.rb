@@ -4,6 +4,7 @@ require './lib/students_importer'
 require './lib/teachers_importer'
 require './app/models/student'
 require './app/models/teacher'
+require './app/models/outline'
 # Add new app/ and lib/ files here when they are created.
 
 module AppConfig

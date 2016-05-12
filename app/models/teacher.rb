@@ -2,7 +2,9 @@ class Teacher < ActiveRecord::Base
   validates :email, uniqueness: true
   validate :retirement_date_validity
   validate :retirement_date_check
-  has_many :students
+  
+  has_many :outlines
+  has_many :students, through: :outlines
 
   after_save :retirement_date_nil
 

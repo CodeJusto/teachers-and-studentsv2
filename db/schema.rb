@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512125404) do
+ActiveRecord::Schema.define(version: 20160512141905) do
+
+  create_table "outlines", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "teacher_id"
+    t.integer "feedback"
+  end
 
   create_table "students", force: :cascade do |t|
     t.integer  "teacher_id"
@@ -26,13 +32,14 @@ ActiveRecord::Schema.define(version: 20160512125404) do
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "address"
-    t.string "phone"
-    t.date   "last_student_added_at"
-    t.date   "hire_date"
-    t.date   "retirement_date"
+    t.string  "name"
+    t.string  "email"
+    t.string  "address"
+    t.string  "phone"
+    t.date    "last_student_added_at"
+    t.date    "hire_date"
+    t.date    "retirement_date"
+    t.integer "rating"
   end
 
 end
